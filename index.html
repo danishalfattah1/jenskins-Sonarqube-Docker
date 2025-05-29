@@ -1,93 +1,13 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kalkulator Sederhana</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f4f8;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    .kalkulator {
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    input, select {
-      margin: 10px 0;
-      padding: 8px;
-      width: 100%;
-      font-size: 16px;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #0056b3;
-    }
-    .hasil {
-      margin-top: 15px;
-      font-weight: bold;
-      font-size: 18px;
-    }
-  </style>
-</head>
-<body>
-  <div class="kalkulator">
-    <h2>Kalkulator Sederhana</h2>
-    <input type="number" id="angka1" placeholder="Masukkan angka pertama" />
-    <input type="number" id="angka2" placeholder="Masukkan angka kedua" />
-    <select id="operator">
-      <option value="+">Tambah (+)</option>
-      <option value="-">Kurang (-)</option>
-      <option value="*">Kali (×)</option>
-      <option value="/">Bagi (÷)</option>
-    </select>
-    <button onclick="hitung()">Hitung</button>
-    <div class="hasil" id="hasil"></div>
-  </div>
-
-  <script>
-    function hitung() {
-      const angka1 = parseFloat(document.getElementById("angka1").value);
-      const angka2 = parseFloat(document.getElementById("angka2").value);
-      const operator = document.getElementById("operator").value;
-      let hasil;
-
-      if (isNaN(angka1) || isNaN(angka2)) {
-        hasil = "Masukkan dua angka yang valid.";
-      } else {
-        switch (operator) {
-          case "+":
-            hasil = angka1 + angka2;
-            break;
-          case "-":
-            hasil = angka1 - angka2;
-            break;
-          case "*":
-            hasil = angka1 * angka2;
-            break;
-          case "/":
-            hasil = angka2 !== 0 ? angka1 / angka2 : "Tidak bisa dibagi nol";
-            break;
-        }
-      }
-
-      document.getElementById("hasil").innerText = "Hasil: " + hasil;
-    }
-  </script>
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
